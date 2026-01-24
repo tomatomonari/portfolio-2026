@@ -1,0 +1,58 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+interface PreFooterSectionProps {
+  className?: string;
+}
+
+const premiumSpring = {
+  type: "spring" as const,
+  stiffness: 90,
+  damping: 14,
+  mass: 1.0,
+};
+
+export function PreFooterSection({ className }: PreFooterSectionProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+
+  return (
+    <section
+      ref={containerRef}
+      className={cn(
+        "w-full py-24 md:py-32",
+        className
+      )}
+    >
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={premiumSpring}
+          className="text-center"
+        >
+          {/* Big Text with Logo */}
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-800 leading-tight">
+            Let&apos;s build
+            <span className="inline-flex items-center mx-3 md:mx-4 align-middle">
+              <Image
+                src="/tt-logo.png"
+                alt="Toma Tomonari Logo"
+                width={80}
+                height={80}
+                className="h-10 md:h-16 lg:h-20 w-auto object-contain"
+              />
+            </span>
+            something
+            <br />
+            amazing together.
+          </h2>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
