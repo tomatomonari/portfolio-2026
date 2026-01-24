@@ -26,8 +26,8 @@ const popUpSpring = {
 
 // Manifesto lines data
 const manifestoLines = [
-  "👋 Welcome! I'm Toma. 4+ years of experience building validated products and delivering outcomes, leading diverse, cross-cultural teams.",
-  "This includes driving product at early-stage startups, building 0-to-1 products from scratch, and mentoring aspiring Product Managers in design thinking."
+  "Hey, I'm Toma. I bring 4+ years of experience building validated products and leading diverse, cross-cultural teams to deliver measurable outcomes.",
+  "My background includes driving product at early-stage startups and solving complex industry challenges for partners ranging from Fortune 500 companies to community institutions."
 ];
 
 export function HeroSection() {
@@ -45,7 +45,7 @@ export function HeroSection() {
   return (
     <section className="w-full pt-32 md:pt-40 pb-2 overflow-visible">
       {/* Container with Phantom alignment - Centered */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 text-center">
+      <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-10 text-center">
         {/* Line 1: AI [Rotating] PM */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900">
           AI{" "}

@@ -36,7 +36,7 @@ export function Footer() {
         {/* Top Section: Logo + Contact Form */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12">
           {/* Logo + Tagline */}
-          <div className="flex-shrink-0 flex items-center gap-4">
+          <div className="flex-shrink-0">
             <Image
               src="/tt-logo.png"
               alt="Toma Tomonari Logo"
@@ -44,9 +44,6 @@ export function Footer() {
               height={60}
               className="h-12 md:h-16 w-auto object-contain"
             />
-            <p className="text-lg font-medium text-slate-700 md:hidden">
-              Let&apos;s build something amazing together.
-            </p>
           </div>
 
           {/* Contact Form Card */}

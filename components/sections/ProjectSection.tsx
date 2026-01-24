@@ -161,8 +161,8 @@ export function ProjectSection({
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
-          paddingLeft: "max(24px, calc((100vw - 1440px) / 2 + 40px))",
-          paddingRight: "max(24px, calc((100vw - 1440px) / 2 + 40px))",
+          paddingLeft: "max(16px, calc((100vw - 1440px) / 2 + 40px))",
+          paddingRight: "max(16px, calc((100vw - 1440px) / 2 + 40px))",
           // Extra padding for bounce overflow
           paddingTop: "80px",
           marginTop: "-80px",

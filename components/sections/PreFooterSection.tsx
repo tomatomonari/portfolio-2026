@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 interface PreFooterSectionProps {
   className?: string;
@@ -37,17 +36,7 @@ export function PreFooterSection({ className }: PreFooterSectionProps) {
         >
           {/* Big Text with Logo */}
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-800 leading-tight">
-            Let&apos;s build
-            <span className="inline-flex items-center mx-3 md:mx-4 align-middle">
-              <Image
-                src="/tt-logo.png"
-                alt="Toma Tomonari Logo"
-                width={80}
-                height={80}
-                className="h-10 md:h-16 lg:h-20 w-auto object-contain"
-              />
-            </span>
-            something
+            Let&apos;s build something
             <br />
             amazing together.
           </h2>
