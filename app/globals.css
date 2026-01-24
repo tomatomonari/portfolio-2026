@@ -36,12 +36,15 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg-main);
 }
 
 body {
   background: var(--bg-main);
   color: var(--text-primary);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  /* iOS safe area support */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Utility: Hide scrollbar while maintaining scroll functionality */
