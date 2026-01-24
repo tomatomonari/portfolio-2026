@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`min-h-screen overflow-x-clip overflow-y-visible transition-colors duration-500 ${isDarkBg ? "bg-violet-300" : "bg-bg-main"}`}>
+    <div className={`min-h-screen overflow-x-clip md:overflow-y-visible transition-colors duration-500 ${isDarkBg ? "bg-violet-300" : "bg-bg-main"}`}>
       {/* Sticky Navigation */}
       <Navbar isDarkBg={isDarkBg} />
 
@@ -41,7 +41,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Content Sections */}
-      <div className="pb-20 overflow-visible">
+      <div className="pb-20 md:overflow-visible">
         {/* Experience Section */}
         <ExperienceSection title="Experience" icon={<Briefcase className="w-8 h-8" />}>
           <ExperienceCard

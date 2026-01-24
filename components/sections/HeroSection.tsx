@@ -43,7 +43,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="w-full pt-32 md:pt-40 pb-2 overflow-visible">
+    <section className="w-full pt-28 md:pt-40 pb-2 overflow-visible">
       {/* Container with Phantom alignment - Centered */}
       <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-10 text-center">
         {/* Line 1: AI [Rotating] PM */}

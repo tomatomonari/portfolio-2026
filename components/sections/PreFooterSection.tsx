@@ -27,7 +27,7 @@ export function PreFooterSection({ className }: PreFooterSectionProps) {
         className
       )}
     >
-      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -36,7 +36,7 @@ export function PreFooterSection({ className }: PreFooterSectionProps) {
         >
           {/* Big Text with Logo */}
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-800 leading-tight">
-            Let&apos;s build something
+            <span className="whitespace-nowrap">Let&apos;s build something</span>
             <br />
             amazing together.
           </h2>

@@ -30,7 +30,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full px-4 md:px-6 pb-6">
+    <footer id="contact" className="w-full px-4 md:px-6 pb-6 scroll-mt-24">
       {/* Main Footer Card */}
       <div className="w-full max-w-[1440px] mx-auto bg-white rounded-[2rem] md:rounded-[3rem] px-6 md:px-12 py-10 md:py-16">
         {/* Top Section: Logo + Contact Form */}
