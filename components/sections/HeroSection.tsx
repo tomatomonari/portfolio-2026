@@ -26,8 +26,8 @@ const popUpSpring = {
 
 // Manifesto lines data
 const manifestoLines = [
-  "Hey, I'm Toma. I bring 4+ years of experience building validated products and leading diverse, cross-cultural teams to deliver measurable outcomes.",
-  "My background includes driving product at early-stage startups and solving complex industry challenges for partners ranging from Fortune 500 companies to community institutions."
+  "4+ years of experience building products, leading multidisciplinary teams and delivering outcomes.",
+  "This includes driving product at early-stage startups and solving complex industry challenges for Fortune 500 companies to community institutions."
 ];
 
 export function HeroSection() {
