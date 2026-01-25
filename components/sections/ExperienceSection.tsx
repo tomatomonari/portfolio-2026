@@ -171,6 +171,7 @@ export function ExperienceSection({
           paddingBottom: "24px",
         }}
       >
+        <div className="overflow-visible">
         <div
           className="flex items-start gap-4 md:gap-8"
           style={{ width: "max-content" }}
@@ -239,6 +240,7 @@ export function ExperienceSection({
               </motion.div>
             );
           })}
+        </div>
         </div>
       </div>
     </section>
