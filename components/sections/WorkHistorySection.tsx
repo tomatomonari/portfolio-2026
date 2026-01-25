@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-interface EducationSectionProps {
+interface WorkHistorySectionProps {
   children: ReactNode;
   className?: string;
   title?: string;
@@ -28,7 +28,7 @@ const popSpring = {
   mass: 0.8,
 };
 
-// Entrance spring for slide-in animation
+// Triple-bounce spring for entrance animation (reduced bounce)
 const entranceSpring = {
   type: "spring" as const,
   stiffness: 120,
@@ -59,24 +59,24 @@ function getMobileStackedOffset(index: number) {
   return -index * (MOBILE_CARD_WIDTH + MOBILE_GAP - MOBILE_STEP_OFFSET);
 }
 
-export function EducationSection({
+export function WorkHistorySection({
   children,
   className,
   title,
   icon,
-}: EducationSectionProps) {
+}: WorkHistorySectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Late trigger: cards stay stacked until 70% of section is visible
   const isInView = useInView(containerRef, { once: true, amount: 0.7 });
 
-  // Mobile detection
+  // Mobile detection - disable animations on mobile
   const [isMobile, setIsMobile] = useState(false);
   // Large screen detection - for padding alignment with header (lg: breakpoint = 1024px)
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  // Entrance animation state
+  // Entrance animation state - cards slide up from bottom
   const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
@@ -91,6 +91,7 @@ export function EducationSection({
 
   // Trigger entrance animation on mount (both mobile and desktop)
   useEffect(() => {
+    // Delay to ensure initial state is rendered first
     const timer = setTimeout(() => setHasEntered(true), 300);
     return () => clearTimeout(timer);
   }, []);
@@ -136,9 +137,9 @@ export function EducationSection({
 
   return (
     <section
-      id="education"
+      id="work-history"
       ref={containerRef}
-      className={cn("w-full py-12 md:py-20 scroll-mt-12", className)}
+      className={cn("w-full py-12 md:py-20 scroll-mt-12 overflow-visible", className)}
     >
       {/* Control Bar Header with Smart Scroll - Animates with cards */}
       {title && (
@@ -162,13 +163,14 @@ export function EducationSection({
       )}
 
       {/* Cards container - Full-width "Breakout" carousel with aligned padding */}
+      {/* Negative margin + padding creates space for bounce without layout shift (desktop only) */}
       <div
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
           paddingLeft: isLargeScreen ? "40px" : "16px",
           paddingRight: isLargeScreen ? "40px" : "16px",
-          // Extra padding for bounce overflow
+          // Extra padding for bounce overflow on both mobile and desktop
           paddingTop: "80px",
           marginTop: "-80px",
           paddingBottom: "24px",
@@ -186,35 +188,44 @@ export function EducationSection({
             // Mobile stacked state: all cards anchor at Index 0's position
             const mobileStackedX = getMobileStackedOffset(index);
 
-            // Desktop entrance state (stacked position)
-            const desktopEntranceState = { x: stackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
+            // Desktop entrance state (off-screen with stacked x offset)
+            const desktopEntranceState = { x: stackedX, y: 800, rotate: 0, scale: 1, opacity: 0 };
             // Mobile entrance state (off-screen with stacked x offset)
             const mobileEntranceState = { x: mobileStackedX, y: 600, rotate: 0, scale: 1, opacity: 0 };
+            // Desktop stacked state (after entrance, waiting for fan-out)
+            const stackedState = { x: stackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
             // Mobile stacked state (after entrance, waiting for fan-out)
             const mobileStackedState = { x: mobileStackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
 
             // Determine current animation state
             const getAnimateState = () => {
               if (isMobile) {
-                if (!hasEntered) return mobileEntranceState;
-                if (isInView) return visibleState;
-                return mobileStackedState;
+                if (!hasEntered) return mobileEntranceState; // Stay off-screen
+                if (isInView) return visibleState; // Fan out
+                return mobileStackedState; // Slide up to stack
               }
-              if (!hasEntered) return desktopEntranceState;
-              if (isInView) return visibleState;
-              return desktopEntranceState;
+              if (!hasEntered) return desktopEntranceState; // Stay off-screen
+              if (isInView) return visibleState; // Fan out
+              return stackedState; // Slide up to stack
             };
 
             // Determine transition based on animation phase
             const getTransition = () => {
-              if (!hasEntered) return { duration: 0 };
+              if (!hasEntered) return { duration: 0 }; // No animation while waiting
               if (isMobile) {
                 if (isInView) {
+                  // Mobile fan-out animation: all cards animate together
                   return { ...premiumSpring, delay: 0 };
                 }
+                // Mobile entrance animation with stagger
                 return { ...entranceSpring, delay: index * 0.1 };
               }
-              return { ...premiumSpring, delay: 0 };
+              if (isInView) {
+                // Desktop fan-out animation: all cards animate together simultaneously
+                return { ...premiumSpring, delay: 0 };
+              }
+              // Desktop entrance animation: top card (index 0) slides up first
+              return { ...entranceSpring, delay: index * 0.12 };
             };
 
             return (

@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-interface ExperienceSectionProps {
+interface FeaturedSectionProps {
   children: ReactNode;
   className?: string;
   title?: string;
@@ -59,12 +59,12 @@ function getMobileStackedOffset(index: number) {
   return -index * (MOBILE_CARD_WIDTH + MOBILE_GAP - MOBILE_STEP_OFFSET);
 }
 
-export function ExperienceSection({
+export function FeaturedSection({
   children,
   className,
   title,
   icon,
-}: ExperienceSectionProps) {
+}: FeaturedSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -73,15 +73,20 @@ export function ExperienceSection({
 
   // Mobile detection - disable animations on mobile
   const [isMobile, setIsMobile] = useState(false);
+  // Large screen detection - for padding alignment with header (lg: breakpoint = 1024px)
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   // Entrance animation state - cards slide up from bottom
   const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   // Trigger entrance animation on mount (both mobile and desktop)
@@ -132,7 +137,7 @@ export function ExperienceSection({
 
   return (
     <section
-      id="experience"
+      id="featured"
       ref={containerRef}
       className={cn("w-full py-12 md:py-20 scroll-mt-12 overflow-visible", className)}
     >
@@ -163,15 +168,14 @@ export function ExperienceSection({
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
-          paddingLeft: "max(16px, calc((100vw - 1440px) / 2 + 40px))",
-          paddingRight: "max(16px, calc((100vw - 1440px) / 2 + 40px))",
+          paddingLeft: isLargeScreen ? "40px" : "16px",
+          paddingRight: isLargeScreen ? "40px" : "16px",
           // Extra padding for bounce overflow on both mobile and desktop
           paddingTop: "80px",
           marginTop: "-80px",
           paddingBottom: "24px",
         }}
       >
-        <div className="overflow-visible">
         <div
           className="flex items-start gap-4 md:gap-8"
           style={{ width: "max-content" }}
@@ -240,7 +244,6 @@ export function ExperienceSection({
               </motion.div>
             );
           })}
-        </div>
         </div>
       </div>
     </section>

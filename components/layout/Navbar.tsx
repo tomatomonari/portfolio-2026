@@ -16,7 +16,7 @@ const menuSpring = {
 
 
 const navLinks = [
-  { label: "Experience", href: "#experience" },
+  { label: "Work History", href: "#work-history" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "About", href: "#about" },

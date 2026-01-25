@@ -73,15 +73,20 @@ export function ProjectSection({
 
   // Mobile detection
   const [isMobile, setIsMobile] = useState(false);
+  // Large screen detection - for padding alignment with header (lg: breakpoint = 1024px)
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   // Entrance animation state
   const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   // Trigger entrance animation on mount (both mobile and desktop)
@@ -161,8 +166,8 @@ export function ProjectSection({
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
-          paddingLeft: "max(16px, calc((100vw - 1440px) / 2 + 40px))",
-          paddingRight: "max(16px, calc((100vw - 1440px) / 2 + 40px))",
+          paddingLeft: isLargeScreen ? "40px" : "16px",
+          paddingRight: isLargeScreen ? "40px" : "16px",
           // Extra padding for bounce overflow
           paddingTop: "80px",
           marginTop: "-80px",
