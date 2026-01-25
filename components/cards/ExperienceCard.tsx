@@ -172,7 +172,7 @@ export function ExperienceCard({
         </p>
 
         {/* Description - flex-1 to push button to bottom */}
-        <p className={cn("flex-1 text-sm md:text-base leading-relaxed", colors.textSecondary)}>
+        <p className={cn("flex-1 text-sm md:text-base leading-relaxed whitespace-pre-line", colors.textSecondary)}>
           {description}
         </p>
       </div>
