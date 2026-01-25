@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { Briefcase, Rocket, GraduationCap } from "lucide-react";
+import { Star, Rocket, GraduationCap } from "lucide-react";
 import { ExperienceCard, EducationCard } from "@/components/cards";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -42,47 +42,47 @@ export default function Home() {
 
       {/* Content Sections */}
       <div className="pb-20 md:overflow-visible">
-        {/* Experience Section */}
-        <ExperienceSection title="Experience" icon={<Briefcase className="w-8 h-8" />}>
+        {/* Featured Section */}
+        <ExperienceSection title="Featured" icon={<Star className="w-8 h-8" />}>
           <ExperienceCard
-            title="Product Consultant"
-            role="Startups & Korean Gov"
-            date="2024 - Present"
-            description="Led go-to-market pitching projects for government-backed startups."
+            title="Technical Product Manager"
+            role="Ox — Supply Chain Startup"
+            date="2022 - 2025"
+            description="Built platform infrastructure + 0-to-1 analytics product → 3x customer scale • 20% cost cut • 67% faster onboarding • NPS 70+"
             link="#"
             color="blue"
           />
           <ExperienceCard
-            title="Product Manager"
-            role="Tech Startups"
-            date="2021 - 2024"
-            description="3 years of shipping SaaS products."
+            title="Co-founder & Product Lead"
+            role="Bento @ McMillon Innovation Studio"
+            date="2021 - 2022"
+            description="Built digital menu platform for restaurants. Won $10k at Governor's Cup — only undergrad, 1 month prep vs competitors' 1+ year."
             link="#"
             color="green"
           />
           <ExperienceCard
-            title="Senior PM"
-            role="Google"
-            date="2020 - 2021"
-            description="Led the search team on discovery features and personalization."
+            title="Design Thinking Boot Camp"
+            role="Stanford d.school"
+            date="2025"
+            description="3-day intensive ($17k program). By day 3, taught a 90-min workshop to paid participants."
             link="#"
-            color="cyan"
+            color="orange"
           />
           <ExperienceCard
-            title="Product Lead"
-            role="Fintech Startup"
-            date="2019 - 2020"
-            description="Launched mobile banking features serving 500K+ users."
+            title="Stanford Entrepreneurship Program"
+            role="JETRO JRX"
+            date="2025"
+            description="Selected 1 of 20 from Japan. Government flagship program. Month at Stanford with entrepreneurs who've had multiple exits."
             link="#"
             color="purple"
           />
           <ExperienceCard
-            title="Associate PM"
-            role="E-commerce Platform"
-            date="2018 - 2019"
-            description="Optimized checkout flow increasing conversion by 15%."
+            title="Graduate Assistant"
+            role="McMillon Innovation Studio"
+            date="2020 - 2022, 2025 - Present"
+            description="Facilitated design thinking workshops. Solved Fortune 500 challenges (Walmart, P&G). Doubled student engagement records."
             link="#"
-            color="orange"
+            color="cyan"
           />
         </ExperienceSection>
 

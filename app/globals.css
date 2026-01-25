@@ -30,8 +30,8 @@
   --radius-card: var(--radius-card);
 
   /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", monospace;
 }
 
 html {
@@ -42,9 +42,19 @@ html {
 body {
   background: var(--bg-main);
   color: var(--text-primary);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   /* iOS safe area support */
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Minimum font size */
+* {
+  font-size: inherit;
+}
+
+small, .text-xs, .text-sm {
+  font-size: max(14px, inherit);
 }
 
 /* Utility: Hide scrollbar while maintaining scroll functionality */
