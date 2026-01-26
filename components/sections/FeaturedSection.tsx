@@ -175,7 +175,7 @@ export function FeaturedSection({
     <section
       id="featured"
       ref={containerRef}
-      className={cn("w-full py-12 md:py-20 scroll-mt-12 overflow-visible", className)}
+      className={cn("w-full pt-8 pb-12 md:pt-14 md:pb-20 scroll-mt-12 overflow-visible", className)}
     >
       {/* Control Bar Header with Smart Scroll - Animates with cards */}
       {title && (
