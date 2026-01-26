@@ -211,7 +211,7 @@ export function ProjectSection({
         }}
       >
         <div
-          className="flex items-start gap-4 md:gap-8"
+          className="flex items-start gap-4 md:gap-5"
           style={{ width: "max-content" }}
         >
           {childArray.map((child, index) => {

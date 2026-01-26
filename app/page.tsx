@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`min-h-screen overflow-x-clip md:overflow-y-visible transition-colors duration-500 ${isDarkBg ? "bg-violet-300" : "bg-bg-main"}`}>
+    <div className={`min-h-dvh overflow-x-clip md:overflow-y-visible transition-colors duration-500 ${isDarkBg ? "bg-violet-300" : "bg-bg-main"}`}>
       {/* Sticky Navigation */}
       <Navbar isDarkBg={isDarkBg} />
 
