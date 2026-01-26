@@ -209,7 +209,7 @@ export function ExperienceCard({
     // Consistent shadow - no hover expansion (strict flatness)
     "shadow-md",
     // Fixed "Portrait" dimensions - Tuned for elegance
-    "w-[89vw] aspect-[3/4]", // Mobile - 3:4 ratio
+    "w-[calc(100vw-38px)] aspect-[3/4]", // Mobile - full width minus padding (19px each side)
     "md:w-[430px] md:h-[573px]", // Desktop - 3:4 ratio (430 × 4/3)
     link && "cursor-pointer"
   );

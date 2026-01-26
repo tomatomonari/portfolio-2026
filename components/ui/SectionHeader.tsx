@@ -24,7 +24,7 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn("w-full px-4 lg:px-10 flex justify-between items-end mb-10 md:mb-4", className)}>
+    <div className={cn("w-full px-[19px] lg:px-10 flex justify-between items-end mb-10 md:mb-4", className)}>
       {/* Left: Title Pill */}
       <div
         className={cn(

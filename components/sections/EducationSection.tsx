@@ -40,6 +40,36 @@ const entranceSpring = {
 const CARD_WIDTH = 450;
 const STEP_OFFSET = 15;
 const SCROLL_AMOUNT = 400;
+const SCROLL_DURATION = 450; // Animation duration in ms
+
+// Ease-in-out cubic easing function
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+// Custom animated scroll function with easing
+function animatedScrollBy(
+  element: HTMLElement,
+  amount: number,
+  duration: number = SCROLL_DURATION
+) {
+  const startPosition = element.scrollLeft;
+  const startTime = performance.now();
+
+  function animate(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeInOutCubic(progress);
+
+    element.scrollLeft = startPosition + amount * easedProgress;
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
 
 // Mobile card dimensions
 const MOBILE_CARD_WIDTH = 330;
@@ -121,13 +151,17 @@ export function EducationSection({
   }, [checkScroll]);
 
   const scrollPrev = () => {
-    const scrollAmount = isMobile ? MOBILE_CARD_WIDTH + MOBILE_GAP : SCROLL_AMOUNT;
-    scrollRef.current?.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    if (!scrollRef.current) return;
+    // Mobile: card width is (100vw - 38px), plus 16px gap = 100vw - 22px
+    const scrollAmount = isMobile ? window.innerWidth - 22 : SCROLL_AMOUNT;
+    animatedScrollBy(scrollRef.current, -scrollAmount);
   };
 
   const scrollNext = () => {
-    const scrollAmount = isMobile ? MOBILE_CARD_WIDTH + MOBILE_GAP : SCROLL_AMOUNT;
-    scrollRef.current?.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    if (!scrollRef.current) return;
+    // Mobile: card width is (100vw - 38px), plus 16px gap = 100vw - 22px
+    const scrollAmount = isMobile ? window.innerWidth - 22 : SCROLL_AMOUNT;
+    animatedScrollBy(scrollRef.current, scrollAmount);
   };
 
   const childArray = Children.toArray(children);
@@ -168,8 +202,8 @@ export function EducationSection({
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
-          paddingLeft: isLargeScreen ? "40px" : "16px",
-          paddingRight: isLargeScreen ? "40px" : "16px",
+          paddingLeft: isLargeScreen ? "40px" : "19px",
+          paddingRight: isLargeScreen ? "40px" : "19px",
           // Extra padding for bounce overflow
           paddingTop: "80px",
           marginTop: "-80px",
