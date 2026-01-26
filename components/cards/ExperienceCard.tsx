@@ -218,12 +218,13 @@ export function ExperienceCard({
   const motionStyle = { x, y };
 
   if (link) {
+    const isInternal = link.startsWith("/");
     return (
       <motion.a
         ref={cardRef as unknown as React.RefObject<HTMLAnchorElement>}
         href={link}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isInternal ? undefined : "_blank"}
+        rel={isInternal ? undefined : "noopener noreferrer"}
         className={cardClassName}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

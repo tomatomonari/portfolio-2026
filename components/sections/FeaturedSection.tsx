@@ -122,11 +122,13 @@ export function FeaturedSection({
   }, [checkScroll]);
 
   const scrollPrev = () => {
-    scrollRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
+    const scrollAmount = isMobile ? MOBILE_CARD_WIDTH + MOBILE_GAP : SCROLL_AMOUNT;
+    scrollRef.current?.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   };
 
   const scrollNext = () => {
-    scrollRef.current?.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+    const scrollAmount = isMobile ? MOBILE_CARD_WIDTH + MOBILE_GAP : SCROLL_AMOUNT;
+    scrollRef.current?.scrollBy({ left: scrollAmount, behavior: "smooth" });
   };
 
   const childArray = Children.toArray(children);

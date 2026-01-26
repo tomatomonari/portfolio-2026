@@ -49,7 +49,7 @@ export default function Home() {
             role="Ox - SaaS Startup in Supply Chain"
             date="2022 - 2025"
             description={"• Led infrastructure overhaul -> enabled 3x customer scale and 70% faster B2B integration while reducing infra cost and app wide latency by 20%.\n• Built analytics product 0-to-1 and evolved it into warehouse management tool.\n• Drove cross-functional ceremonies, roadmap planning, and strategic prioritization across engineering, design and product teams."}
-            link="#"
+            link="/work/ox"
             color="blue"
           />
           <ExperienceCard
@@ -65,7 +65,7 @@ export default function Home() {
             role="Stanford d.school"
             date="2025"
             description={"• 3 days of intensive design thinking bootcamp - diverging and converging on problems and solutions.\n• Ran a 90 minute Design Thinking Workshop to paid participants at d.school."}
-            link="#"
+            link="/program/stanford-dschool"
             color="orange"
           />
           <ExperienceCard
@@ -81,7 +81,7 @@ export default function Home() {
             role="McMillon Innovation Studio"
             date="2020-2022, 2025-2026"
             description={"• As student: Solved business challenges with Fortune 500 companies including Walmart, P&G, and J&J.\n• As GA: Facilitating design thinking workshops, mentoring student leaders help solve problems."}
-            link="#"
+            link="/work/mcmillon"
             color="cyan"
           />
         </FeaturedSection>
@@ -93,7 +93,7 @@ export default function Home() {
             role="Ox - SaaS Startup in Supply Chain"
             date="2022 - 2025"
             description={"• Led infrastructure overhaul -> enabled 3x customer scale and 70% faster B2B integration while reducing infra cost and app wide latency by 20%.\n• Built analytics product 0-to-1 and evolved it into warehouse management tool.\n• Drove cross-functional ceremonies, roadmap planning, and strategic prioritization across engineering, design and product teams."}
-            link="#"
+            link="/work/ox"
             color="blue"
           />
           <ExperienceCard
@@ -109,7 +109,7 @@ export default function Home() {
             role="McMillon Innovation Studio"
             date="2020-2022, 2025-2026"
             description={"• As student: Solved business challenges with Fortune 500 companies including Walmart, P&G, and J&J.\n• As GA: Facilitating design thinking workshops, mentoring student leaders help solve problems."}
-            link="#"
+            link="/work/mcmillon"
             color="cyan"
           />
         </WorkHistorySection>
