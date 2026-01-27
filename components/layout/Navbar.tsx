@@ -89,7 +89,8 @@ export function Navbar({ isDarkBg = false }: NavbarProps) {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-[19px] lg:px-10 h-20 md:h-24 pointer-events-none">
+      <nav className="fixed top-0 left-0 right-0 z-50 h-20 md:h-24 pointer-events-none">
+      <div className="w-full max-w-[1330px] mx-auto h-full flex justify-between items-center px-[19px] lg:px-0">
         {/* Left: Brand Logo */}
         <a
           href="/"
@@ -201,6 +202,7 @@ export function Navbar({ isDarkBg = false }: NavbarProps) {
             </AnimatePresence>
           </button>
         </div>
+      </div>
       </nav>
 
       {/* Mobile Menu Overlay + Panel */}

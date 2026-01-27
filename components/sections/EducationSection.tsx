@@ -202,8 +202,8 @@ export function EducationSection({
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
-          paddingLeft: isLargeScreen ? "40px" : "19px",
-          paddingRight: isLargeScreen ? "40px" : "19px",
+          paddingLeft: isLargeScreen ? "max(0px, calc((100vw - 1330px) / 2))" : "19px",
+          paddingRight: isLargeScreen ? "max(0px, calc((100vw - 1330px) / 2))" : "19px",
           // Extra padding for bounce overflow
           paddingTop: "80px",
           marginTop: "-80px",

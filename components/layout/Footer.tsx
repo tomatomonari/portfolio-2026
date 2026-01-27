@@ -32,7 +32,7 @@ export function Footer() {
   return (
     <footer id="contact" className="w-full px-4 md:px-6 pb-6 scroll-mt-24" style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))' }}>
       {/* Main Footer Card */}
-      <div className="w-full max-w-[1440px] mx-auto bg-white rounded-[2rem] md:rounded-[3rem] px-6 md:px-12 py-10 md:py-16">
+      <div className="w-full max-w-[1330px] mx-auto bg-white rounded-[2rem] md:rounded-[3rem] px-6 md:px-12 py-10 md:py-16">
         {/* Top Section: Logo + Contact Form */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12">
           {/* Logo + Tagline */}
@@ -166,7 +166,7 @@ export function Footer() {
       </div>
 
       {/* Copyright - Outside the card */}
-      <div className="w-full max-w-[1440px] mx-auto mt-6 text-center">
+      <div className="w-full max-w-[1330px] mx-auto mt-6 text-center">
         <p className="text-sm text-slate-500">
           &copy; Toma Tomonari {new Date().getFullYear()}
         </p>

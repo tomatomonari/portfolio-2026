@@ -34,7 +34,7 @@ export function LogoRow() {
   return (
     <section ref={containerRef} className="w-full py-12 border-t border-slate-100">
       {/* Container with Phantom alignment */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div className="w-full max-w-[1330px] mx-auto px-6 lg:px-0">
         {/* Logo Row - Responsive flex */}
         <div className="flex flex-row justify-between items-center gap-1 md:justify-center md:gap-20">
           {credentials.map((item, index) => (
