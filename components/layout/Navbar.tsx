@@ -58,11 +58,7 @@ const navLinks: NavLink[] = [
     label: "Projects",
     href: "#projects",
     subItems: [
-      { label: "AI Meeting Prep", href: "#projects" },
-      { label: "Portfolio 2026", href: "#projects" },
-      { label: "Design System", href: "#projects" },
-      { label: "Voice Assistant", href: "#projects" },
-      { label: "Analytics Dashboard", href: "#projects" },
+      { label: "Portfolio 2026", href: "/project/portfolio-2026" },
     ],
   },
   { label: "Education", href: "#education" },

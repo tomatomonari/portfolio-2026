@@ -50,3 +50,25 @@ Came back while finishing my Master's. Last semester we didn't have a director, 
 - **150 applications, ~130 showed up** at kickoff — double the previous record of ~80
 - **18 projects** — highest ever (credit to the new director for bringing in partners)
 - Revamped the ideation workshop with industry frameworks (ROST, etc.) that translate to actual PM work
+
+## What McMillon taught me about building with agency
+
+The Studio didn't just teach me design thinking frameworks - it taught me to see problems and fix them without waiting for permission.
+
+**Examples:**
+
+When I came back as a GA last semester, I noticed the ideation workshop was outdated - sticky notes and basic brainstorming. After experiencing the interactive, energetic workshops at Stanford, I could clearly see what the Studio was missing. Nobody asked me to change it, but I pitched the new director: *"What if we taught students actual industry frameworks like ROST, Rose/Thorn/Bud, affinity mapping - so they're better equipped for real PM work?"* We implemented it with the same interactive energy I'd seen at Stanford. Feedback from ~15 project managers: it was significantly better than previous semesters.
+
+For Demo Day, we moved the event from a dorm space to R3Cubed - a new professional research facility. We negotiated the deal ourselves. We invited Doug McMillon (Walmart CEO and Studio founder). He showed up, did 1:1 mentoring with students, and that Demo Day led to **3 additional Walmart project partnerships** the following semester.
+
+After a Sam's Club team presented at their office (invited because their project was so strong), one exec asked: *"How can I hire them?"* Result: **2 more Sam's Club projects** the next semester.
+
+**The gap I'm solving next:**
+
+Students use AI for slop - writing documents, summarizing research. They're missing the real opportunity: **using AI to build and ship.** At Demo Day, the feedback we consistently hear is *"Great pitch, but it'd be more impressive if we could see a working prototype."*
+
+This semester, I'm running a workshop on using Claude Code and AI tools to prototype and ship faster. The goal: students leave with working prototypes, not just pitch decks.
+
+**What this connects to PM work:**
+
+Facilitating 18 cross-functional teams taught me how to bring people along without authority. Identifying the AI gap and building a solution taught me to stay obsessed with outcomes, not outputs. The Studio gave me space to practice what Ben at Walmart looks for: *high agency, delivering results, and building things proactively.*

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { MarkdownContent } from "@/components/ui/MarkdownContent";
+import { TechIcons } from "@/components/ui/TechIcons";
 import {
   getContentBySlug,
   getContentStaticParams,
@@ -73,6 +74,11 @@ export default async function ContentPage({ params }: ContentPageProps) {
             {content.frontmatter.title}
           </h1>
           <p className="text-xl text-[#4a4a6a] leading-relaxed">{content.frontmatter.subtitle}</p>
+
+          {/* Tech Stack Icons */}
+          {content.frontmatter.tech && content.frontmatter.tech.length > 0 && (
+            <TechIcons tech={content.frontmatter.tech} />
+          )}
 
           {/* Tags */}
           {content.frontmatter.tags.length > 0 && (

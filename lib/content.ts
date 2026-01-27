@@ -16,6 +16,7 @@ export interface ContentFrontmatter {
   tags: string[];
   featured: boolean;
   color?: string;
+  tech?: string[];
 }
 
 export interface ContentItem {

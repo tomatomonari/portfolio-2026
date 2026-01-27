@@ -57,7 +57,7 @@ export default function Home() {
             role="Bento @ McMillon Innovation Studio"
             date="2021 - 2022"
             description={"• Built digital menu platform for restaurants from scratch.\n• Won 2nd place and $10k at Arkansas Governor's Cup as the only undergrad team."}
-            link="#"
+            link="/project/bento"
             color="green"
           />
           <ExperienceCard
@@ -73,7 +73,7 @@ export default function Home() {
             role="Stanford University"
             date="2025"
             description={"• Selected as 1 of 20 entrepreneurs from Japan for a pre-idea accelerator.\n• Learned core startup principles from seasoned serial entrepreneur mentors."}
-            link="#"
+            link="/program/jstarx"
             color="purple"
           />
           <ExperienceCard
@@ -101,7 +101,7 @@ export default function Home() {
             role="Bento @ McMillon Innovation Studio"
             date="2021 - 2022"
             description={"• Built digital menu platform for restaurants from scratch.\n• Won 2nd place and $10k at Arkansas Governor's Cup as the only undergrad team."}
-            link="#"
+            link="/project/bento"
             color="green"
           />
           <ExperienceCard
@@ -150,44 +150,12 @@ export default function Home() {
         {/* Projects Section */}
         <ProjectSection title="Projects" icon={<Rocket className="w-8 h-8" />}>
           <ExperienceCard
-            title="AI Meeting Prep"
-            role="RAG Tool"
-            date="2025"
-            description="Built an AI agent to prep briefs before meetings."
-            link="#"
-            color="pink"
-          />
-          <ExperienceCard
             title="Portfolio 2026"
-            role="Next.js + Framer"
+            role="Next.js + Framer Motion"
             date="2026"
-            description="High-performance vibecoded site."
-            link="#"
+            description="A portfolio site built like a product — vibecoded end-to-end with Claude Code."
+            link="/project/portfolio-2026"
             color="gray"
-          />
-          <ExperienceCard
-            title="Design System"
-            role="Component Library"
-            date="2024"
-            description="Built a scalable design system for rapid prototyping."
-            link="#"
-            color="cream"
-          />
-          <ExperienceCard
-            title="Voice Assistant"
-            role="LLM Integration"
-            date="2024"
-            description="Built a voice-controlled assistant for smart home automation."
-            link="#"
-            color="green"
-          />
-          <ExperienceCard
-            title="Analytics Dashboard"
-            role="Data Visualization"
-            date="2023"
-            description="Real-time metrics dashboard with interactive charts."
-            link="#"
-            color="blue"
           />
         </ProjectSection>
 
