@@ -37,6 +37,7 @@
 
 html {
   scroll-behavior: smooth;
+  /* Use bg-main for iOS overscroll (matches page background) */
   background: var(--bg-main);
 }
 
