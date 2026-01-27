@@ -205,7 +205,6 @@ export function FeaturedSection({
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
           paddingLeft: isLargeScreen ? "max(0px, calc((100vw - 1330px) / 2))" : "19px",
-          paddingRight: isLargeScreen ? "max(0px, calc((100vw - 1330px) / 2))" : "19px",
           // Extra padding for bounce overflow on both mobile and desktop
           paddingTop: "80px",
           marginTop: "-80px",
@@ -214,7 +213,10 @@ export function FeaturedSection({
       >
         <div
           className="flex items-start gap-4 md:gap-5"
-          style={{ width: "max-content" }}
+          style={{
+            width: "max-content",
+            paddingRight: isLargeScreen ? "max(0px, calc((100vw - 1330px) / 2))" : "19px",
+          }}
         >
           {childArray.map((child, index) => {
             // Desktop stacked state: all cards anchor at Index 1's position
