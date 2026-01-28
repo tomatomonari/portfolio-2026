@@ -43,6 +43,96 @@ export default function Home() {
 
       {/* Content Sections */}
       <div className="pb-20 md:overflow-visible">
+        {/* Test Coloured Section */}
+        <ProjectSection title="Test Coloured" icon={<FlaskConical className="w-8 h-8" />}>
+          <TestCard
+            title="Product Manager"
+            role="Ox — Supply Chain Startup"
+            description="Scaled product 3x and built analytics from zero."
+            date="2022 - 2025"
+            image="/oxproductimage.png"
+            imageScale={1.04}
+            imagePosition="32% center"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/ox-logo.png"
+            watermarkSize={170}
+            watermarkMobileSize={140}
+            watermarkBottom="1.5rem"
+            watermarkMobileBottom="1.5rem"
+            watermarkRight="-0.5rem"
+            watermarkMobileRight="0rem"
+            link="/work/ox"
+            color="dark"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageScale={1.15}
+            imagePosition="28% 15%"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/logos/sdschool.svg"
+            watermarkMobileBottom="2rem"
+            invertWatermark
+            link="/program/stanford-dschool"
+            color="orange"
+          />
+          <TestCard
+            title="JStarX @ Stanford"
+            role="Stanford University"
+            date="2025"
+            image="/jstarx.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo={["/jstarxlogo.png", "/stanfordlogo.svg"]}
+            watermarkSize={135}
+            watermarkGap="-space-x-10"
+            watermarkBottom="2.5rem"
+            watermarkRight="-0.5rem"
+            link="/program/jstarx"
+            color="cream"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/program/stanford-dschool"
+            color="green"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/program/stanford-dschool"
+            color="cyan"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/program/stanford-dschool"
+            color="pink"
+          />
+        </ProjectSection>
+
         {/* Featured Section */}
         <FeaturedSection title="Featured" icon={<Star className="w-8 h-8" />}>
           <ExperienceCard

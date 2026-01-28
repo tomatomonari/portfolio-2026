@@ -14,7 +14,8 @@ type CardColor =
   | "purple"
   | "cyan"
   | "gray"
-  | "cream";
+  | "cream"
+  | "dark";
 
 interface TestCardProps {
   title: string;
@@ -115,6 +116,14 @@ const colorConfig: Record<CardColor, { bg: string; text: string; textSecondary: 
     button: "bg-amber-900 text-amber-100",
     buttonText: "text-amber-100",
   },
+  dark: {
+    bg: "bg-[#1c1c1e]",
+    text: "text-white",
+    textSecondary: "text-neutral-400",
+    badge: "bg-neutral-800 text-neutral-300",
+    button: "bg-white text-neutral-900",
+    buttonText: "text-neutral-900",
+  },
 };
 
 // "Under-Damped" Spring Config - allows triple-bounce (Push -> Snap Back -> Mini-Rebound)
@@ -203,11 +212,11 @@ export function TestCard({
         />
       </div>
 
-      {/* White content bottom half */}
+      {/* Content bottom half */}
       <div className="relative flex flex-col flex-1 px-6 pt-5 pb-6 md:px-8 md:pt-6 md:pb-8">
         {/* Large watermark year */}
         {showWatermark && (
-          <span className="absolute top-3 right-6 md:right-8 text-7xl md:text-8xl font-bold text-slate-100 leading-none select-none pointer-events-none">
+          <span className={cn("absolute top-3 right-6 md:right-8 text-7xl md:text-8xl font-bold leading-none select-none pointer-events-none", color === "white" ? "text-slate-100" : "opacity-15 " + colors.text)}>
             {yearWatermark}
           </span>
         )}
@@ -233,32 +242,32 @@ export function TestCard({
           /* Inline layout: title+role on left, year on right */
           <div className="flex items-start justify-between mb-auto">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight mb-1 relative z-10">
+              <h3 className={cn("text-2xl md:text-3xl font-bold leading-tight mb-1 relative z-10", colors.text)}>
                 {title}
               </h3>
-              <p className="text-base text-slate-500">
+              <p className={cn("text-base", colors.textSecondary)}>
                 {role}
               </p>
               {description && (
-                <p className="text-sm text-slate-400 mt-1">
+                <p className={cn("text-sm mt-1 opacity-70", colors.textSecondary)}>
                   {description}
                 </p>
               )}
             </div>
-            <span className="text-sm text-slate-500 mt-1 flex-shrink-0 ml-4">
+            <span className={cn("text-sm mt-1 flex-shrink-0 ml-4", colors.textSecondary)}>
               {date}
             </span>
           </div>
         ) : (
           /* Default stacked layout */
           <>
-            <span className={cn("text-sm text-slate-500 mb-2", yearAlign === "right" && "self-end")}>
+            <span className={cn("text-sm mb-2", colors.textSecondary, yearAlign === "right" && "self-end")}>
               {date}
             </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight mb-1 relative z-10">
+            <h3 className={cn("text-2xl md:text-3xl font-bold leading-tight mb-1 relative z-10", colors.text)}>
               {title}
             </h3>
-            <p className="text-base text-slate-500 mb-auto">
+            <p className={cn("text-base mb-auto", colors.textSecondary)}>
               {role}
             </p>
           </>
@@ -266,7 +275,7 @@ export function TestCard({
 
         {/* Read More Button - outlined pill, bottom-left */}
         <div className="mt-4">
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border-2 border-slate-800 text-slate-800">
+          <span className={cn("inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border-2", color === "white" ? "border-slate-800 text-slate-800" : "border-current " + colors.text)}>
             Read More
             <span>→</span>
           </span>
@@ -325,7 +334,7 @@ export function TestCard({
 
   const cardClassName = cn(
     "relative flex flex-col rounded-card overflow-hidden",
-    image ? "bg-white" : colors.bg,
+    colors.bg,
     "shadow-md",
     "w-[calc(100vw-38px)] aspect-[3/4]",
     "md:w-[430px] md:h-[573px]",
