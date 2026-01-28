@@ -1,11 +1,12 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { Star, Briefcase, Rocket, GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
+import { Star, Rocket, GraduationCap } from "lucide-react";
 import { ExperienceCard, EducationCard } from "@/components/cards";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { HeroSection, LogoRow, ProjectSection, FeaturedSection, WorkHistorySection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
+import { HeroSection, ProjectSection, FeaturedSection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
 
 export default function Home() {
   const educationRef = useRef<HTMLDivElement>(null);
@@ -86,67 +87,6 @@ export default function Home() {
           />
         </FeaturedSection>
 
-        {/* Work History Section */}
-        <WorkHistorySection title="Work History" icon={<Briefcase className="w-8 h-8" />}>
-          <ExperienceCard
-            title="Technical Product Manager"
-            role="Ox - SaaS Startup in Supply Chain"
-            date="2022 - 2025"
-            description={"• Led infrastructure overhaul -> enabled 3x customer scale and 70% faster B2B integration while reducing infra cost and app wide latency by 20%.\n• Built analytics product 0-to-1 and evolved it into warehouse management tool.\n• Drove cross-functional ceremonies, roadmap planning, and strategic prioritization across engineering, design and product teams."}
-            link="/work/ox"
-            color="blue"
-          />
-          <ExperienceCard
-            title="Founder & Product Lead"
-            role="Bento @ McMillon Innovation Studio"
-            date="2021 - 2022"
-            description={"• Built digital menu platform for restaurants from scratch.\n• Won 2nd place and $10k at Arkansas Governor's Cup as the only undergrad team."}
-            link="/project/bento"
-            color="green"
-          />
-          <ExperienceCard
-            title="Product Manager -> Graduate Assistant"
-            role="McMillon Innovation Studio"
-            date="2020-2022, 2025-2026"
-            description={"• As student: Solved business challenges with Fortune 500 companies including Walmart, P&G, and J&J.\n• As GA: Facilitating design thinking workshops, mentoring student leaders help solve problems."}
-            link="/work/mcmillon"
-            color="cyan"
-          />
-        </WorkHistorySection>
-
-        {/* Social Proof / Credibility Row */}
-        <LogoRow />
-
-        {/* Education Section */}
-        <div ref={educationRef}>
-          <EducationSection title="Education" icon={<GraduationCap className="w-8 h-8" />}>
-            <EducationCard
-              school="Stanford d.school"
-              degree="Design Thinking"
-              year="2023"
-              color="dschool"
-            />
-            <EducationCard
-              school="Masters in PM"
-              degree="Product Management"
-              year="2022"
-              color="arkansas"
-            />
-            <EducationCard
-              school="AWS Certification"
-              degree="Solutions Architect"
-              year="2021"
-              color="cyan"
-            />
-            <EducationCard
-              school="Google UX"
-              degree="Professional Certificate"
-              year="2020"
-              color="blue"
-            />
-          </EducationSection>
-        </div>
-
         {/* Projects Section */}
         <ProjectSection title="Projects" icon={<Rocket className="w-8 h-8" />}>
           <ExperienceCard
@@ -158,6 +98,58 @@ export default function Home() {
             color="gray"
           />
         </ProjectSection>
+
+        {/* Interstitial */}
+        <div className="w-full max-w-[1330px] mx-auto px-[19px] lg:px-0 py-16 md:py-24 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ type: "spring", stiffness: 500, damping: 25, mass: 0.8 }}
+            className="text-4xl md:text-6xl font-semibold text-[#3d3a50] leading-tight tracking-tight"
+          >
+            The formal stuff,
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ type: "spring", stiffness: 500, damping: 25, mass: 0.8, delay: 0.1 }}
+            className="text-4xl md:text-6xl font-semibold text-slate-400 leading-tight tracking-tight"
+          >
+            for those who care.
+          </motion.p>
+        </div>
+
+        {/* Education Section */}
+        <div ref={educationRef}>
+          <EducationSection title="Education" icon={<GraduationCap className="w-8 h-8" />}>
+            <EducationCard
+              title="MS in Product Innovation"
+              school="University of Arkansas"
+              year="2026"
+              logo="/logos/uofawalton.svg"
+              invertLogo
+              color="arkansas"
+            />
+            <EducationCard
+              title="Design Thinking Bootcamp"
+              school="Stanford d.school"
+              year="2025"
+              logo="/logos/sdschoolwhite.svg"
+              logoLarge
+              color="gray"
+            />
+            <EducationCard
+              title="BS in Computer Science"
+              school="University of Arkansas"
+              year="2022"
+              logo="/logos/uofawalton.svg"
+              invertLogo
+              color="arkansas"
+            />
+          </EducationSection>
+        </div>
 
       </div>
 

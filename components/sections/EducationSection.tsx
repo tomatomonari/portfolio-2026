@@ -202,7 +202,7 @@ export function EducationSection({
         ref={scrollRef}
         className="w-full overflow-x-auto scrollbar-hide overflow-y-visible"
         style={{
-          paddingLeft: isLargeScreen ? "max(0px, calc((100vw - 1330px) / 2))" : "19px",
+          paddingLeft: isLargeScreen ? "max(0px, calc(50% - 665px))" : "19px",
           // Extra padding for bounce overflow
           paddingTop: "80px",
           marginTop: "-80px",
@@ -224,10 +224,12 @@ export function EducationSection({
             // Mobile stacked state: all cards anchor at Index 0's position
             const mobileStackedX = getMobileStackedOffset(index);
 
-            // Desktop entrance state (stacked position)
-            const desktopEntranceState = { x: stackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
+            // Desktop entrance state (off-screen with stacked x offset)
+            const desktopEntranceState = { x: stackedX, y: 800, rotate: 0, scale: 1, opacity: 0 };
             // Mobile entrance state (off-screen with stacked x offset)
             const mobileEntranceState = { x: mobileStackedX, y: 600, rotate: 0, scale: 1, opacity: 0 };
+            // Desktop stacked state (after entrance, waiting for fan-out)
+            const stackedState = { x: stackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
             // Mobile stacked state (after entrance, waiting for fan-out)
             const mobileStackedState = { x: mobileStackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
 
@@ -240,7 +242,7 @@ export function EducationSection({
               }
               if (!hasEntered) return desktopEntranceState;
               if (isInView) return visibleState;
-              return desktopEntranceState;
+              return stackedState;
             };
 
             // Determine transition based on animation phase
@@ -252,7 +254,10 @@ export function EducationSection({
                 }
                 return { ...entranceSpring, delay: index * 0.1 };
               }
-              return { ...premiumSpring, delay: 0 };
+              if (isInView) {
+                return { ...premiumSpring, delay: 0 };
+              }
+              return { ...entranceSpring, delay: index * 0.12 };
             };
 
             return (

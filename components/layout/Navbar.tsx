@@ -46,15 +46,6 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    label: "Work History",
-    href: "#work-history",
-    subItems: [
-      { label: "Ox", href: "/work/ox" },
-      { label: "Bento", href: "#work-history" },
-      { label: "McMillon Studio", href: "/work/mcmillon" },
-    ],
-  },
-  {
     label: "Projects",
     href: "#projects",
     subItems: [

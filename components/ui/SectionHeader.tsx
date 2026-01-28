@@ -36,11 +36,10 @@ export function SectionHeader({
         )}
       >
         {/* Icon - smaller on mobile */}
-        <span className="text-slate-600 [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-8 md:[&>svg]:h-8">
-          {icon || <Layers className="w-5 h-5 md:w-8 md:h-8" />}
+        <span className="text-slate-600 [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">
+          {icon || <Layers className="w-5 h-5 md:w-6 md:h-6" />}
         </span>
-        {/* Title - not bold on mobile, smaller text */}
-        <span className="text-base md:text-2xl font-medium md:font-bold text-slate-800 tracking-wide">
+        <span className="text-base md:text-2xl font-normal text-slate-800 tracking-wide">
           {title}
         </span>
       </div>
