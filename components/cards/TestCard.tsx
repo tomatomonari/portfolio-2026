@@ -160,6 +160,7 @@ export function TestCard({
   const colors = colorConfig[color];
   const cardRef = useRef<HTMLDivElement | HTMLAnchorElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -181,6 +182,7 @@ export function TestCard({
 
     x.set(nudgeX);
     y.set(nudgeY);
+    setIsHovered(true);
 
     setTimeout(() => {
       x.set(0);
@@ -191,6 +193,7 @@ export function TestCard({
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
+    setIsHovered(false);
   };
 
   // Extract last 2 digits of year for watermark
@@ -249,12 +252,12 @@ export function TestCard({
                 {role}
               </p>
               {description && (
-                <p className={cn("text-sm mt-1 opacity-70", colors.textSecondary)}>
+                <p className={cn("text-sm mt-1 opacity-70 whitespace-pre-line", colors.textSecondary)}>
                   {description}
                 </p>
               )}
             </div>
-            <span className={cn("text-sm mt-1 flex-shrink-0 ml-4", colors.textSecondary)}>
+            <span className={cn("text-sm mt-1 flex-shrink-0 ml-4 whitespace-pre-line text-right", colors.textSecondary)}>
               {date}
             </span>
           </div>
@@ -273,9 +276,16 @@ export function TestCard({
           </>
         )}
 
-        {/* Read More Button - outlined pill, bottom-left */}
+        {/* Read More Button - outlined pill, fills on hover */}
         <div className="mt-4">
-          <span className={cn("inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border-2", color === "white" ? "border-slate-800 text-slate-800" : "border-current " + colors.text)}>
+          <span className={cn(
+            "inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border-2 transition-all duration-200",
+            color === "white"
+              ? "border-slate-800 text-slate-800"
+              : isHovered
+                ? colors.button + " border-transparent"
+                : "border-current " + colors.text
+          )}>
             Read More
             <span>→</span>
           </span>

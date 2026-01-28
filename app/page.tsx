@@ -6,7 +6,7 @@ import { Star, Rocket, GraduationCap, FlaskConical } from "lucide-react";
 import { ExperienceCard, EducationCard, TestCard } from "@/components/cards";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { HeroSection, ProjectSection, FeaturedSection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
+import { HeroSection, ProjectSection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
 
 export default function Home() {
   const educationRef = useRef<HTMLDivElement>(null);
@@ -43,8 +43,8 @@ export default function Home() {
 
       {/* Content Sections */}
       <div className="pb-20 md:overflow-visible">
-        {/* Test Coloured Section */}
-        <ProjectSection title="Test Coloured" icon={<FlaskConical className="w-8 h-8" />}>
+        {/* Featured Section */}
+        <ProjectSection title="Featured" icon={<Star className="w-8 h-8" />}>
           <TestCard
             title="Product Manager"
             role="Ox — Supply Chain Startup"
@@ -69,6 +69,7 @@ export default function Home() {
           <TestCard
             title="Design Thinking Bootcamp"
             role="Stanford d.school"
+            description={"Intensive 3-day program.\nRan paid workshop at d.school."}
             date="2025"
             image="/bootcamp.jpeg"
             imageScale={1.15}
@@ -77,6 +78,7 @@ export default function Home() {
             showWatermark={false}
             inlineHeader
             watermarkLogo="/logos/sdschool.svg"
+            watermarkBottom="2rem"
             watermarkMobileBottom="2rem"
             invertWatermark
             link="/program/stanford-dschool"
@@ -85,6 +87,7 @@ export default function Home() {
           <TestCard
             title="JStarX @ Stanford"
             role="Stanford University"
+            description={"Selected 1 of 20 from Japan.\nTrained under serial entrepreneur mentors."}
             date="2025"
             image="/jstarx.jpeg"
             imageHeight="50%"
@@ -99,83 +102,34 @@ export default function Home() {
             color="cream"
           />
           <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/program/stanford-dschool"
-            color="green"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/program/stanford-dschool"
-            color="cyan"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/program/stanford-dschool"
-            color="pink"
-          />
-        </ProjectSection>
-
-        {/* Featured Section */}
-        <FeaturedSection title="Featured" icon={<Star className="w-8 h-8" />}>
-          <ExperienceCard
-            title="Technical Product Manager"
-            role="Ox - SaaS Startup in Supply Chain"
-            date="2022 - 2025"
-            description={"• Led infrastructure overhaul -> enabled 3x customer scale and 70% faster B2B integration while reducing infra cost and app wide latency by 20%.\n• Built analytics product 0-to-1 and evolved it into warehouse management tool.\n• Drove cross-functional ceremonies, roadmap planning, and strategic prioritization across engineering, design and product teams."}
-            link="/work/ox"
-            color="blue"
-          />
-          <ExperienceCard
-            title="Founder & Product Lead"
+            title="Founder"
             role="Bento @ McMillon Innovation Studio"
+            description="Built digital menu platform and won $10k at Governor's Cup."
             date="2021 - 2022"
-            description={"• Built digital menu platform for restaurants from scratch.\n• Won 2nd place and $10k at Arkansas Governor's Cup as the only undergrad team."}
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
             link="/project/bento"
             color="green"
           />
-          <ExperienceCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            description={"• 3 days of intensive design thinking bootcamp - diverging and converging on problems and solutions.\n• Ran a 90 minute Design Thinking Workshop to paid participants at d.school."}
-            link="/program/stanford-dschool"
-            color="orange"
-          />
-          <ExperienceCard
-            title="JStarX @ Stanford"
-            role="Stanford University"
-            date="2025"
-            description={"• Selected as 1 of 20 entrepreneurs from Japan for a pre-idea accelerator.\n• Learned core startup principles from seasoned serial entrepreneur mentors."}
-            link="/program/jstarx"
-            color="purple"
-          />
-          <ExperienceCard
-            title="Product Manager -> Graduate Assistant"
+          <TestCard
+            title="Product Manager Graduate Assistant"
             role="McMillon Innovation Studio"
-            date="2020-2022, 2025-2026"
-            description={"• As student: Solved business challenges with Fortune 500 companies including Walmart, P&G, and J&J.\n• As GA: Facilitating design thinking workshops, mentoring student leaders help solve problems."}
+            description="Solved challenges with Walmart, P&G, J&J. Now mentoring students."
+            date={"2020-2022\n2025-2026"}
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/logos/studiologoset.svg"
+            watermarkBottom="2rem"
+            invertWatermark
             link="/work/mcmillon"
             color="cyan"
           />
-        </FeaturedSection>
+        </ProjectSection>
+
 
         {/* Test Section */}
         <ProjectSection title="Test" icon={<FlaskConical className="w-8 h-8" />}>

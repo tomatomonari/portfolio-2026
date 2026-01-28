@@ -170,9 +170,12 @@ export function ProjectSection({
   // Visible state (final position)
   const visibleState = { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 };
 
+  // Generate id from title (lowercase, replace spaces with hyphens)
+  const sectionId = title ? title.toLowerCase().replace(/\s+/g, '-') : undefined;
+
   return (
     <section
-      id="projects"
+      id={sectionId}
       ref={containerRef}
       className={cn("w-full py-12 md:py-20 scroll-mt-12", className)}
     >
@@ -224,8 +227,10 @@ export function ProjectSection({
             // Mobile stacked state: all cards anchor at Index 0's position
             const mobileStackedX = getMobileStackedOffset(index);
 
-            // Desktop entrance state (stacked position)
-            const desktopEntranceState = { x: stackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
+            // Desktop entrance state (off-screen, below viewport)
+            const desktopEntranceState = { x: stackedX, y: 800, rotate: 0, scale: 1, opacity: 0 };
+            // Desktop stacked state (after entrance, waiting for fan-out)
+            const desktopStackedState = { x: stackedX, y: 0, rotate: 0, scale: 1, opacity: 1 };
             // Mobile entrance state (off-screen with stacked x offset)
             const mobileEntranceState = { x: mobileStackedX, y: 600, rotate: 0, scale: 1, opacity: 0 };
             // Mobile stacked state (after entrance, waiting for fan-out)
@@ -240,7 +245,7 @@ export function ProjectSection({
               }
               if (!hasEntered) return desktopEntranceState;
               if (isInView) return visibleState;
-              return desktopEntranceState;
+              return desktopStackedState;
             };
 
             // Determine transition based on animation phase
@@ -252,14 +257,17 @@ export function ProjectSection({
                 }
                 return { ...entranceSpring, delay: index * 0.1 };
               }
-              return { ...premiumSpring, delay: 0 };
+              if (isInView) {
+                return { ...premiumSpring, delay: 0 };
+              }
+              return { ...entranceSpring, delay: index * 0.12 };
             };
 
             return (
               <motion.div
                 key={index}
                 className="flex-shrink-0"
-                initial={isMobile ? mobileEntranceState : desktopEntranceState}
+                initial={{ x: isMobile ? mobileStackedX : stackedX, y: 800, rotate: 0, scale: 1, opacity: 0 }}
                 animate={getAnimateState()}
                 transition={getTransition()}
                 style={{
