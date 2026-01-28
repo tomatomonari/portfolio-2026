@@ -2,8 +2,8 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Star, Rocket, GraduationCap } from "lucide-react";
-import { ExperienceCard, EducationCard } from "@/components/cards";
+import { Star, Rocket, GraduationCap, FlaskConical } from "lucide-react";
+import { ExperienceCard, EducationCard, TestCard } from "@/components/cards";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection, ProjectSection, FeaturedSection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
@@ -86,6 +86,154 @@ export default function Home() {
             color="cyan"
           />
         </FeaturedSection>
+
+        {/* Test Section */}
+        <ProjectSection title="Test" icon={<FlaskConical className="w-8 h-8" />}>
+          <TestCard
+            title="Product Manager"
+            role="Ox — Supply Chain Startup"
+            description="Scaled product 3x and built analytics from zero."
+            date="2022 - 2025"
+            image="/oxproductimage.png"
+            imageScale={1.04}
+            imagePosition="32% center"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/ox-logo.png"
+            watermarkSize={170}
+            watermarkMobileSize={140}
+            watermarkBottom="1.5rem"
+            watermarkMobileBottom="1.5rem"
+            watermarkRight="-0.5rem"
+            watermarkMobileRight="0rem"
+            invertWatermark
+            link="/work/ox"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageScale={1.15}
+            imagePosition="28% 15%"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/logos/sdschool.svg"
+            watermarkMobileBottom="2rem"
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="JStarX @ Stanford"
+            role="Stanford University"
+            date="2025"
+            image="/jstarx.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo={["/jstarxlogo.png", "/stanfordlogo.svg"]}
+            watermarkSize={135}
+            watermarkGap="-space-x-10"
+            watermarkBottom="2.5rem"
+            watermarkRight="-0.5rem"
+            link="/program/jstarx"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/program/stanford-dschool"
+            color="white"
+          />
+        </ProjectSection>
+
+        {/* Test Section 2 */}
+        <ProjectSection title="Test 2" icon={<FlaskConical className="w-8 h-8" />}>
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            imageScale={1.15}
+            imagePosition="28% 15%"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/logos/sdschool.svg"
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="JStarX @ Stanford"
+            role="Stanford University"
+            date="2025"
+            image="/jstarx.jpeg"
+            link="/program/jstarx"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            link="/program/stanford-dschool"
+            color="white"
+          />
+          <TestCard
+            title="Design Thinking Bootcamp"
+            role="Stanford d.school"
+            date="2025"
+            image="/bootcamp.jpeg"
+            link="/program/stanford-dschool"
+            color="white"
+          />
+        </ProjectSection>
 
         {/* Projects Section */}
         <ProjectSection title="Projects" icon={<Rocket className="w-8 h-8" />}>
