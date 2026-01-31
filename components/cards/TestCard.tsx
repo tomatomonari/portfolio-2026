@@ -186,8 +186,8 @@ export function TestCard({
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
-    const nudgeX = -((e.clientX - rect.left - rect.width / 2) / 8);
-    const nudgeY = -((e.clientY - rect.top - rect.height / 2) / 8);
+    const nudgeX = -((e.clientX - rect.left - rect.width / 2) / 16);
+    const nudgeY = -((e.clientY - rect.top - rect.height / 2) / 16);
 
     x.set(nudgeX);
     y.set(nudgeY);
