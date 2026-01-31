@@ -48,7 +48,7 @@ export default function Home() {
           <TestCard
             title="Product Manager"
             role="Ox — Supply Chain Startup"
-            description="Scaled product 3x and built analytics from zero."
+            description="Built warehouse automation platform reducing operator onboarding from days to 15 minutes."
             date="2022 - 2025"
             image="/oxproductimage.png"
             imageScale={1.04}
@@ -67,9 +67,21 @@ export default function Home() {
             color="dark"
           />
           <TestCard
+            title="Founder"
+            role="Bento @ McMillon Innovation Studio"
+            description="Built digital menu platform and won $10k at Governor's Cup."
+            date="2021 - 2022"
+            image="/bootcamp.jpeg"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            link="/project/bento"
+            color="green"
+          />
+          <TestCard
             title="Design Thinking Bootcamp"
             role="Stanford d.school"
-            description={"Intensive 3-day program.\nRan paid workshop at d.school."}
+            description={"Trained under seasoned d.school coaches.\nLed a paid workshop for external attendees."}
             date="2025"
             image="/bootcamp.jpeg"
             imageScale={1.15}
@@ -102,18 +114,6 @@ export default function Home() {
             color="cream"
           />
           <TestCard
-            title="Founder"
-            role="Bento @ McMillon Innovation Studio"
-            description="Built digital menu platform and won $10k at Governor's Cup."
-            date="2021 - 2022"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/project/bento"
-            color="green"
-          />
-          <TestCard
             title="Product Manager Graduate Assistant"
             role="McMillon Innovation Studio"
             description="Solved challenges with Walmart, P&G, J&J. Now mentoring students."
@@ -127,155 +127,6 @@ export default function Home() {
             invertWatermark
             link="/work/mcmillon"
             color="cyan"
-          />
-        </ProjectSection>
-
-
-        {/* Test Section */}
-        <ProjectSection title="Test" icon={<FlaskConical className="w-8 h-8" />}>
-          <TestCard
-            title="Product Manager"
-            role="Ox — Supply Chain Startup"
-            description="Scaled product 3x and built analytics from zero."
-            date="2022 - 2025"
-            image="/oxproductimage.png"
-            imageScale={1.04}
-            imagePosition="32% center"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            watermarkLogo="/ox-logo.png"
-            watermarkSize={170}
-            watermarkMobileSize={140}
-            watermarkBottom="1.5rem"
-            watermarkMobileBottom="1.5rem"
-            watermarkRight="-0.5rem"
-            watermarkMobileRight="0rem"
-            invertWatermark
-            link="/work/ox"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageScale={1.15}
-            imagePosition="28% 15%"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            watermarkLogo="/logos/sdschool.svg"
-            watermarkMobileBottom="2rem"
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="JStarX @ Stanford"
-            role="Stanford University"
-            date="2025"
-            image="/jstarx.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            watermarkLogo={["/jstarxlogo.png", "/stanfordlogo.svg"]}
-            watermarkSize={135}
-            watermarkGap="-space-x-10"
-            watermarkBottom="2.5rem"
-            watermarkRight="-0.5rem"
-            link="/program/jstarx"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            link="/program/stanford-dschool"
-            color="white"
-          />
-        </ProjectSection>
-
-        {/* Test Section 2 */}
-        <ProjectSection title="Test 2" icon={<FlaskConical className="w-8 h-8" />}>
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            imageScale={1.15}
-            imagePosition="28% 15%"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            watermarkLogo="/logos/sdschool.svg"
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="JStarX @ Stanford"
-            role="Stanford University"
-            date="2025"
-            image="/jstarx.jpeg"
-            link="/program/jstarx"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            link="/program/stanford-dschool"
-            color="white"
-          />
-          <TestCard
-            title="Design Thinking Bootcamp"
-            role="Stanford d.school"
-            date="2025"
-            image="/bootcamp.jpeg"
-            link="/program/stanford-dschool"
-            color="white"
           />
         </ProjectSection>
 

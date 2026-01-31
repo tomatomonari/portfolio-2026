@@ -48,6 +48,14 @@ export function Footer() {
 
           {/* Contact Form Card */}
           <div className="flex-1 max-w-2xl">
+            <a
+              href="/TomaTomonari-Resume-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-4 md:mb-6 text-2xl md:text-3xl text-slate-700 underline hover:text-violet-600 transition-colors"
+            >
+              View my resume →
+            </a>
             <div className="bg-violet-50/80 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8">
               <form onSubmit={handleSubmit}>
                 {/* Subtext - at top */}
@@ -109,7 +117,7 @@ export function Footer() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
-                    rows={4}
+                    rows={10}
                     className="w-full px-4 py-3 bg-white rounded-2xl text-slate-800 placeholder-slate-400 outline-none focus:ring-2 focus:ring-violet-400 transition-all resize-none"
                   />
                   {/* Send Button */}
@@ -127,7 +135,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Section: Status + Social */}
-        <div className="mt-12 md:mt-16">
+        <div className="mt-12 md:-mt-6">
           <div className="flex items-center gap-4">
             {/* Status Indicator */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 rounded-full">

@@ -15,7 +15,8 @@ type CardColor =
   | "cyan"
   | "gray"
   | "cream"
-  | "dark";
+  | "dark"
+  | "indigo";
 
 interface TestCardProps {
   title: string;
@@ -85,12 +86,12 @@ const colorConfig: Record<CardColor, { bg: string; text: string; textSecondary: 
     buttonText: "text-orange-100",
   },
   purple: {
-    bg: "bg-purple-600",
-    text: "text-white",
-    textSecondary: "text-purple-200",
-    badge: "bg-purple-400 text-purple-950",
-    button: "bg-white text-purple-900",
-    buttonText: "text-purple-900",
+    bg: "bg-purple-400",
+    text: "text-purple-950",
+    textSecondary: "text-purple-800",
+    badge: "bg-purple-300 text-purple-900",
+    button: "bg-purple-900 text-purple-100",
+    buttonText: "text-purple-100",
   },
   cyan: {
     bg: "bg-cyan-300",
@@ -123,6 +124,14 @@ const colorConfig: Record<CardColor, { bg: string; text: string; textSecondary: 
     badge: "bg-neutral-800 text-neutral-300",
     button: "bg-white text-neutral-900",
     buttonText: "text-neutral-900",
+  },
+  indigo: {
+    bg: "bg-indigo-600",
+    text: "text-white",
+    textSecondary: "text-indigo-100",
+    badge: "bg-indigo-400 text-indigo-950",
+    button: "bg-white text-indigo-900",
+    buttonText: "text-indigo-900",
   },
 };
 

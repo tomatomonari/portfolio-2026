@@ -142,11 +142,13 @@ export function Navbar({ isDarkBg = false }: NavbarProps) {
           ))}
         </div>
 
-        {/* Right: Contact Button + Mobile Menu Button */}
+        {/* Right: Resume Button + Mobile Menu Button */}
         <div className="flex items-center gap-3">
-          {/* Contact Button - stays behind backdrop on mobile when menu open */}
+          {/* Resume Button - opens resume in new tab */}
           <a
-            href="#contact"
+            href="/TomaTomonari-Resume-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`font-medium rounded-full px-6 h-12 md:h-auto md:px-8 md:py-4 transition-all duration-300 text-sm md:text-base flex items-center justify-center ${
               isMenuOpen ? "pointer-events-none" : "pointer-events-auto"
             } ${
@@ -155,7 +157,7 @@ export function Navbar({ isDarkBg = false }: NavbarProps) {
                 : "bg-violet-300 text-violet-900 hover:bg-violet-200"
             }`}
           >
-            Contact
+            Resume
           </a>
 
           {/* Mobile Menu Button - always stays above backdrop */}
