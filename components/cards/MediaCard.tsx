@@ -177,6 +177,7 @@ export function MediaCard({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -253,20 +254,38 @@ export function MediaCard({
       {/* Image/Video top half — inset with fully rounded corners, anchor top to crop bottom */}
       <div className="relative overflow-hidden m-2" style={{ height: imageHeight || "55%", borderRadius: "10px 10px 40px 40px" }}>
         {video ? (
-          <video
-            ref={videoRef}
-            src={video}
-            poster={poster}
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{
-              objectPosition: imagePosition || "center top",
-              transform: imageScale ? `scale(${imageScale})` : undefined,
-            }}
-          />
+          <>
+            <video
+              ref={videoRef}
+              src={video}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              onPlaying={() => setIsVideoPlaying(true)}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{
+                objectPosition: imagePosition || "center top",
+                transform: imageScale ? `scale(${imageScale})` : undefined,
+              }}
+            />
+            {poster && (
+              <div
+                className={`absolute inset-0 transition-opacity duration-100 ${isVideoPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+              >
+                <Image
+                  src={poster}
+                  alt={title}
+                  fill
+                  className="object-cover"
+                  style={{
+                    objectPosition: imagePosition || "center top",
+                    transform: imageScale ? `scale(${imageScale})` : undefined,
+                  }}
+                />
+              </div>
+            )}
+          </>
         ) : (
           <Image
             src={image!}
