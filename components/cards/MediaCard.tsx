@@ -25,6 +25,7 @@ interface MediaCardProps {
   description?: string;
   image?: string;
   video?: string;
+  priority?: boolean;
   imageScale?: number;
   imagePosition?: string;
   imageHeight?: string;
@@ -150,6 +151,7 @@ export function MediaCard({
   description,
   image,
   video,
+  priority = false,
   imageScale,
   imagePosition,
   imageHeight,
@@ -255,6 +257,7 @@ export function MediaCard({
             muted
             loop
             playsInline
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
             style={{
               objectPosition: imagePosition || "center top",
@@ -266,6 +269,7 @@ export function MediaCard({
             src={image!}
             alt={title}
             fill
+            priority={priority}
             className="object-cover"
             style={{
               objectPosition: imagePosition || "center top",
