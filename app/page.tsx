@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, Rocket, GraduationCap, FlaskConical } from "lucide-react";
-import { ExperienceCard, LogoCard, MediaCard } from "@/components/cards";
+import { LogoCard, MediaCard } from "@/components/cards";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection, ProjectSection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
