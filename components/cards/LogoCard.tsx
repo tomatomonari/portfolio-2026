@@ -15,7 +15,7 @@ type CardColor =
   | "cyan"
   | "gray";
 
-interface EducationCardProps {
+interface LogoCardProps {
   title: string;
   school: string;
   year: string;
@@ -85,7 +85,7 @@ const slideSpringConfig = {
   damping: 8,      // Low friction allows 3rd oscillation (the mini-rebound)
 };
 
-export function EducationCard({
+export function LogoCard({
   title,
   school,
   year,
@@ -94,7 +94,7 @@ export function EducationCard({
   logoLarge = false,
   className,
   color = "white",
-}: EducationCardProps) {
+}: LogoCardProps) {
   const colors = colorConfig[color];
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -116,8 +116,8 @@ export function EducationCard({
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
-    const nudgeX = -((e.clientX - rect.left - rect.width / 2) / 8);
-    const nudgeY = -((e.clientY - rect.top - rect.height / 2) / 8);
+    const nudgeX = -((e.clientX - rect.left - rect.width / 2) / 16);
+    const nudgeY = -((e.clientY - rect.top - rect.height / 2) / 16);
 
     x.set(nudgeX);
     y.set(nudgeY);

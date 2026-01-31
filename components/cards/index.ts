@@ -1,3 +1,3 @@
 export { ExperienceCard } from "./ExperienceCard";
-export { EducationCard } from "./EducationCard";
-export { TestCard } from "./TestCard";
+export { LogoCard } from "./LogoCard";
+export { MediaCard } from "./MediaCard";

@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, Rocket, GraduationCap, FlaskConical } from "lucide-react";
-import { ExperienceCard, EducationCard, TestCard } from "@/components/cards";
+import { ExperienceCard, LogoCard, MediaCard } from "@/components/cards";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection, ProjectSection, EducationSection, AboutSection, PreFooterSection } from "@/components/sections";
@@ -45,7 +45,7 @@ export default function Home() {
       <div className="pb-20 md:overflow-visible">
         {/* Featured Section */}
         <ProjectSection title="Featured" icon={<Star className="w-8 h-8" />}>
-          <TestCard
+          <MediaCard
             title="Product Manager"
             role="Ox — Supply Chain Startup"
             description="Built warehouse automation platform reducing operator onboarding from days to 15 minutes."
@@ -66,7 +66,7 @@ export default function Home() {
             link="/work/ox"
             color="dark"
           />
-          <TestCard
+          <MediaCard
             title="Founder"
             role="Bento @ McMillon Innovation Studio"
             description="Built digital menu platform and won $10k at Governor's Cup."
@@ -78,7 +78,7 @@ export default function Home() {
             link="/project/bento"
             color="green"
           />
-          <TestCard
+          <MediaCard
             title="Design Thinking Bootcamp"
             role="Stanford d.school"
             description={"Trained under seasoned d.school coaches.\nLed a paid workshop for external attendees."}
@@ -96,7 +96,7 @@ export default function Home() {
             link="/program/stanford-dschool"
             color="orange"
           />
-          <TestCard
+          <MediaCard
             title="JStarX @ Stanford"
             role="Stanford University"
             description={"Selected 1 of 20 from Japan.\nTrained under serial entrepreneur mentors."}
@@ -113,7 +113,7 @@ export default function Home() {
             link="/program/jstarx"
             color="cream"
           />
-          <TestCard
+          <MediaCard
             title="Product Manager Graduate Assistant"
             role="McMillon Innovation Studio"
             description="Solved challenges with Walmart, P&G, J&J. Now mentoring students."
@@ -132,11 +132,19 @@ export default function Home() {
 
         {/* Projects Section */}
         <ProjectSection title="Projects" icon={<Rocket className="w-8 h-8" />}>
-          <ExperienceCard
+          <MediaCard
             title="Portfolio 2026"
             role="Next.js + Framer Motion"
-            date="2026"
             description="A portfolio site built like a product — vibecoded end-to-end with Claude Code."
+            date="2026"
+            video="/pf-shortvid.mp4"
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/tt-logo.png"
+            invertWatermark
+            watermarkSize={180}
+            watermarkBottom="1rem"
             link="/project/portfolio-2026"
             color="gray"
           />
@@ -167,7 +175,7 @@ export default function Home() {
         {/* Education Section */}
         <div ref={educationRef}>
           <EducationSection title="Education" icon={<GraduationCap className="w-8 h-8" />}>
-            <EducationCard
+            <LogoCard
               title="MS in Product Innovation"
               school="University of Arkansas"
               year="2026"
@@ -175,7 +183,7 @@ export default function Home() {
               invertLogo
               color="arkansas"
             />
-            <EducationCard
+            <LogoCard
               title="Design Thinking Bootcamp"
               school="Stanford d.school"
               year="2025"
@@ -183,7 +191,7 @@ export default function Home() {
               logoLarge
               color="gray"
             />
-            <EducationCard
+            <LogoCard
               title="BS in Computer Science"
               school="University of Arkansas"
               year="2022"

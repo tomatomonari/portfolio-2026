@@ -129,8 +129,8 @@ export function ExperienceCard({
 
     // Calculate mouse position relative to card center
     // Divisor of 8 = larger movement range for visible effect
-    const nudgeX = -((e.clientX - rect.left - rect.width / 2) / 8);
-    const nudgeY = -((e.clientY - rect.top - rect.height / 2) / 8);
+    const nudgeX = -((e.clientX - rect.left - rect.width / 2) / 16);
+    const nudgeY = -((e.clientY - rect.top - rect.height / 2) / 16);
 
     // The "Push" - card slides away from mouse entry point
     x.set(nudgeX);

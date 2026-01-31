@@ -18,12 +18,13 @@ type CardColor =
   | "dark"
   | "indigo";
 
-interface TestCardProps {
+interface MediaCardProps {
   title: string;
   role: string;
   date: string;
   description?: string;
   image?: string;
+  video?: string;
   imageScale?: number;
   imagePosition?: string;
   imageHeight?: string;
@@ -142,12 +143,13 @@ const slideSpringConfig = {
   damping: 8,      // Low friction allows 3rd oscillation (the mini-rebound)
 };
 
-export function TestCard({
+export function MediaCard({
   title,
   role,
   date,
   description,
   image,
+  video,
   imageScale,
   imagePosition,
   imageHeight,
@@ -165,9 +167,10 @@ export function TestCard({
   watermarkMobileRight,
   link,
   color = "white",
-}: TestCardProps) {
+}: MediaCardProps) {
   const colors = colorConfig[color];
   const cardRef = useRef<HTMLDivElement | HTMLAnchorElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -177,6 +180,29 @@ export function TestCard({
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  // Auto-play video on mobile when in view
+  useEffect(() => {
+    if (!isMobile || !video || !cardRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (videoRef.current) {
+            if (entry.isIntersecting) {
+              videoRef.current.play();
+            } else {
+              videoRef.current.pause();
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [isMobile, video]);
 
   // Spring-smoothed position values for planar "slide" effect
   const x = useSpring(0, slideSpringConfig);
@@ -193,6 +219,11 @@ export function TestCard({
     y.set(nudgeY);
     setIsHovered(true);
 
+    // Play video on hover
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+
     setTimeout(() => {
       x.set(0);
       y.set(0);
@@ -203,25 +234,45 @@ export function TestCard({
     x.set(0);
     y.set(0);
     setIsHovered(false);
+
+    // Pause video on mouse leave (keeps position)
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
   };
 
   // Extract last 2 digits of year for watermark
   const yearWatermark = date.slice(-2);
 
-  const CardContent = image ? (
+  const CardContent = (image || video) ? (
     <>
-      {/* Image top half — inset with fully rounded corners, anchor top to crop bottom */}
+      {/* Image/Video top half — inset with fully rounded corners, anchor top to crop bottom */}
       <div className="relative overflow-hidden m-2" style={{ height: imageHeight || "55%", borderRadius: "10px 10px 40px 40px" }}>
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-          style={{
-            objectPosition: imagePosition || "center top",
-            transform: imageScale ? `scale(${imageScale})` : undefined,
-          }}
-        />
+        {video ? (
+          <video
+            ref={videoRef}
+            src={video}
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              objectPosition: imagePosition || "center top",
+              transform: imageScale ? `scale(${imageScale})` : undefined,
+            }}
+          />
+        ) : (
+          <Image
+            src={image!}
+            alt={title}
+            fill
+            className="object-cover"
+            style={{
+              objectPosition: imagePosition || "center top",
+              transform: imageScale ? `scale(${imageScale})` : undefined,
+            }}
+          />
+        )}
       </div>
 
       {/* Content bottom half */}
@@ -244,7 +295,7 @@ export function TestCard({
                 width={(isMobile && watermarkMobileSize) ? watermarkMobileSize : watermarkSize}
                 height={(isMobile && watermarkMobileSize) ? watermarkMobileSize : watermarkSize}
                 className="object-contain"
-                style={invertWatermark ? { filter: "brightness(0)" } : undefined}
+                style={invertWatermark ? { filter: "brightness(0) invert(1)" } : undefined}
               />
             ))}
           </div>
