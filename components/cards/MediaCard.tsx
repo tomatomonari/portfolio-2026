@@ -37,6 +37,7 @@ interface MediaCardProps {
   watermarkSize?: number;
   watermarkGap?: string;
   invertWatermark?: boolean;
+  watermarkWhite?: boolean;
   watermarkBottom?: string;
   watermarkMobileBottom?: string;
   watermarkRight?: string;
@@ -164,6 +165,7 @@ export function MediaCard({
   watermarkSize = 150,
   watermarkGap = "-space-x-6",
   invertWatermark = false,
+  watermarkWhite = false,
   watermarkBottom,
   watermarkMobileBottom,
   watermarkRight,
@@ -321,7 +323,7 @@ export function MediaCard({
                 width={(isMobile && watermarkMobileSize) ? watermarkMobileSize : watermarkSize}
                 height={(isMobile && watermarkMobileSize) ? watermarkMobileSize : watermarkSize}
                 className="object-contain"
-                style={invertWatermark ? { filter: "brightness(0) invert(1)" } : undefined}
+                style={watermarkWhite ? { filter: "brightness(0) invert(1)" } : invertWatermark ? { filter: "brightness(0)" } : undefined}
               />
             ))}
           </div>

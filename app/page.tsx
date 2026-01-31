@@ -71,10 +71,13 @@ export default function Home() {
             role="Bento @ McMillon Innovation Studio"
             description="Built digital menu platform and won $10k at Governor's Cup."
             date="2021 - 2022"
-            image="/bootcamp.jpeg"
+            image="/bento-thumbnail-image.png"
             imageHeight="50%"
             showWatermark={false}
             inlineHeader
+            watermarkLogo="/logos/studiologoset.svg"
+            watermarkBottom="2rem"
+            invertWatermark
             link="/project/bento"
             color="green"
           />
@@ -97,6 +100,22 @@ export default function Home() {
             color="orange"
           />
           <MediaCard
+            title="Graduate Assistant"
+            role="McMillon Innovation Studio"
+            description="Solved challenges with Walmart, P&G, J&J. Now mentoring students."
+            date={"2020-2022\n2025-2026"}
+            image="/studio-image.png"
+            imageScale={1.1}
+            imageHeight="50%"
+            showWatermark={false}
+            inlineHeader
+            watermarkLogo="/logos/studiologoset.svg"
+            watermarkBottom="2rem"
+            invertWatermark
+            link="/work/mcmillon"
+            color="cyan"
+          />
+          <MediaCard
             title="JStarX @ Stanford"
             role="Stanford University"
             description={"Selected 1 of 20 from Japan.\nTrained under serial entrepreneur mentors."}
@@ -113,21 +132,6 @@ export default function Home() {
             link="/program/jstarx"
             color="cream"
           />
-          <MediaCard
-            title="Product Manager Graduate Assistant"
-            role="McMillon Innovation Studio"
-            description="Solved challenges with Walmart, P&G, J&J. Now mentoring students."
-            date={"2020-2022\n2025-2026"}
-            image="/bootcamp.jpeg"
-            imageHeight="50%"
-            showWatermark={false}
-            inlineHeader
-            watermarkLogo="/logos/studiologoset.svg"
-            watermarkBottom="2rem"
-            invertWatermark
-            link="/work/mcmillon"
-            color="cyan"
-          />
         </ProjectSection>
 
         {/* Projects Section */}
@@ -143,7 +147,7 @@ export default function Home() {
             showWatermark={false}
             inlineHeader
             watermarkLogo="/tt-logo.png"
-            invertWatermark
+            watermarkWhite
             watermarkSize={180}
             watermarkBottom="1rem"
             link="/project/portfolio-2026"

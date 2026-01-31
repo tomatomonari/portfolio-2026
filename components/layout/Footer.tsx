@@ -49,7 +49,7 @@ export function Footer() {
           {/* Contact Form Card */}
           <div className="flex-1 max-w-2xl">
             <a
-              href="/TomaTomonari-Resume-2026.pdf"
+              href="/tomatomonari-resume-2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mb-4 md:mb-6 text-2xl md:text-3xl text-slate-700 underline hover:text-violet-600 transition-colors"

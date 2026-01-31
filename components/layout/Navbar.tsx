@@ -146,7 +146,7 @@ export function Navbar({ isDarkBg = false }: NavbarProps) {
         <div className="flex items-center gap-3">
           {/* Resume Button - opens resume in new tab */}
           <a
-            href="/TomaTomonari-Resume-2026.pdf"
+            href="/tomatomonari-resume-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={`font-medium rounded-full px-6 h-12 md:h-auto md:px-8 md:py-4 transition-all duration-300 text-sm md:text-base flex items-center justify-center ${
