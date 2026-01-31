@@ -25,6 +25,7 @@ interface MediaCardProps {
   description?: string;
   image?: string;
   video?: string;
+  poster?: string;
   priority?: boolean;
   imageScale?: number;
   imagePosition?: string;
@@ -151,6 +152,7 @@ export function MediaCard({
   description,
   image,
   video,
+  poster,
   priority = false,
   imageScale,
   imagePosition,
@@ -254,6 +256,7 @@ export function MediaCard({
           <video
             ref={videoRef}
             src={video}
+            poster={poster}
             muted
             loop
             playsInline

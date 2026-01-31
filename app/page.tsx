@@ -51,7 +51,6 @@ export default function Home() {
             description="Built warehouse automation platform reducing operator onboarding from days to 15 minutes."
             date="2022 - 2025"
             image="/oxproductimage.png"
-            priority
             imageScale={1.04}
             imagePosition="32% center"
             imageHeight="50%"
@@ -73,7 +72,6 @@ export default function Home() {
             description="Built digital menu platform and won $10k at Governor's Cup."
             date="2021 - 2022"
             image="/bootcamp.jpeg"
-            priority
             imageHeight="50%"
             showWatermark={false}
             inlineHeader
@@ -86,7 +84,6 @@ export default function Home() {
             description={"Trained under seasoned d.school coaches.\nLed a paid workshop for external attendees."}
             date="2025"
             image="/bootcamp.jpeg"
-            priority
             imageScale={1.15}
             imagePosition="28% 15%"
             imageHeight="50%"
@@ -105,7 +102,6 @@ export default function Home() {
             description={"Selected 1 of 20 from Japan.\nTrained under serial entrepreneur mentors."}
             date="2025"
             image="/jstarx.jpeg"
-            priority
             imageHeight="50%"
             showWatermark={false}
             inlineHeader
@@ -123,7 +119,6 @@ export default function Home() {
             description="Solved challenges with Walmart, P&G, J&J. Now mentoring students."
             date={"2020-2022\n2025-2026"}
             image="/bootcamp.jpeg"
-            priority
             imageHeight="50%"
             showWatermark={false}
             inlineHeader
@@ -143,6 +138,7 @@ export default function Home() {
             description="A portfolio site built like a product — vibecoded end-to-end with Claude Code."
             date="2026"
             video="/pf-shortvid.mp4"
+            poster="/pf-poster.png"
             imageHeight="50%"
             showWatermark={false}
             inlineHeader
